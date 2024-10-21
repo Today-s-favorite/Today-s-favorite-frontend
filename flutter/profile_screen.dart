@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My Like List',
       theme: ThemeData(
-        primaryColor: Color(0xFFE4E724), // 전체 테마 기본 색상 적용
+        primaryColor: const Color(0xFFE4E724), // 전체 테마 기본 색상 적용
       ),
-      home: MyLikeListPage(),
+      home: const MyLikeListPage(),
     );
   }
 }
 
 class MyLikeListPage extends StatelessWidget {
+  const MyLikeListPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('my page'),
-        backgroundColor: Color(0xFFE4E724), // 상단바 배경색
+        title: const Text('my page'),
+        backgroundColor: const Color(0xFFE4E724), // 상단바 배경색
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // 이전 화면으로 돌아가기
             Navigator.pop(context);
@@ -38,7 +43,7 @@ class MyLikeListPage extends StatelessWidget {
           child: Column(
             children: [
               _buildProfileSection(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _buildLikeList(context),
             ],
           ),
@@ -52,7 +57,7 @@ class MyLikeListPage extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 10,
@@ -60,25 +65,25 @@ class MyLikeListPage extends StatelessWidget {
           ),
         ],
       ),
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Row(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 40,
             backgroundImage: AssetImage('assets/img/IU.png'), // 실제 이미지로 교체
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 '유애나 님',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 '진짜 TMI다.\nToo Much I love you.',
                 style: TextStyle(
@@ -86,16 +91,16 @@ class MyLikeListPage extends StatelessWidget {
                   color: Colors.grey[700],
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFE4E724), // 버튼 색상 변경
+                  backgroundColor: const Color(0xFFE4E724), // 버튼 색상 변경
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-                child: Text('프로필 편집'),
+                child: const Text('프로필 편집'),
               ),
             ],
           ),
@@ -109,8 +114,8 @@ class MyLikeListPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.symmetric(vertical: 8),
-          child: Text(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: const Text(
             'My Like List',
             style: TextStyle(
               fontSize: 22,
@@ -119,43 +124,72 @@ class MyLikeListPage extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16),
-        _buildLikeItem(Icons.video_library, '유튜브 영상 제목'),
-        _buildLikeItem(Icons.article, '네이버 기사 제목'),
-        _buildLikeItem(Icons.photo, '인스타그램 게시글 텍스트'),
-        _buildLikeItem(Icons.chat, '트위터 게시글 텍스트'),
+        const SizedBox(height: 16),
+        _buildLikeItem(Icons.video_library, '[IU TV] 이븐하게 미국 조식 먹어 봄🥰',
+            'https://www.youtube.com/watch?v=h-M2OeuyZmg&t=4s'),
+        _buildLikeItem(Icons.article, '아이유, 필승의 셔츠룩…침대서 나른+청순 분위기 [화보]',
+            'https://sports.donga.com/article/all/20240927/130114256/1'),
+        _buildLikeItem(Icons.photo, '#Gucci Cruise 2024 경복궁', ''),
+        _buildLikeItem(Icons.article, '하이트진로, 아이유와 ‘2024 이슬라이브 페스티벌’ 개최',
+            'https://www.etoday.co.kr/news/view/2385915'),
+        _buildLikeItem(
+            Icons.video_library,
+            "IU '바이, 썸머 (Bye summer)' Live Clip (2024 IU HEREH WORLD TOUR CONCERT ENCORE : THE WINNING)",
+            'https://www.youtube.com/watch?v=pDvBiB1waBk'),
+        _buildLikeItem(Icons.photo, '##strawberymoon 🍓🌝',
+            'https://www.youtube.com/watch?v=sqgxcCjD04ss'),
+        _buildLikeItem(Icons.chat, "#아이유 ‘시선 싹쓸이하는 귀여움~’ ",
+            'https://m.entertain.naver.com/photo/article/609/0000002582?cid=845617'),
+        _buildLikeItem(Icons.article, "가수 '아이유' 일본  오사카 단독 콘서트 성료",
+            'https://www.edaily.co.kr/news/read?newsId=01125046638922704&mediaCodeNo=258'),
+        _buildLikeItem(Icons.article, '아이유 美 할아버지 팬, 성덕 됐다…“꿈만 같아”',
+            'https://www.sportsworldi.com/newsView/20240801516026'),
+        _buildLikeItem(
+            Icons.photo,
+            '#아이유 10주년 #콘서트 <dlwlrma.> Official MD 사전예약 판매 안내 ',
+            'http://cafe.daum.net/IU/NDuY/361'),
       ],
     );
   }
 
-  Widget _buildLikeItem(IconData icon, String title) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: Color(0xFFE4E724), // 테두리 색상
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 10,
-            offset: Offset(0, 5),
+  Widget _buildLikeItem(IconData icon, String title, String url) {
+    return GestureDetector(
+      onTap: () async {
+        if (await canLaunch(url)) {
+          await launch(url);
+        } else {
+          throw 'Could not launch $url';
+        }
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: const Color(0xFFE4E724), // 테두리 색상
+            width: 1.5,
           ),
-        ],
-      ),
-      child: ListTile(
-        leading: Icon(icon, color: Color(0xFFE4E724), size: 30), // 아이콘 색상
-        title: Text(
-          title,
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-          ),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 10,
+              offset: Offset(0, 5),
+            ),
+          ],
         ),
-        trailing: Icon(Icons.arrow_forward_ios, size: 20),
+        child: ListTile(
+          leading:
+              Icon(icon, color: const Color(0xFFE4E724), size: 30), // 아이콘 색상
+          title: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 20),
+        ),
       ),
     );
   }
