@@ -2,19 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // 날짜 포맷을 위해 intl 패키지를 사용
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ChatScreen(),
+    return const MaterialApp(
+      home: ChatScreen1(),
     );
   }
 }
 
-class ChatScreen extends StatelessWidget {
+class ChatScreen1 extends StatelessWidget {
+  const ChatScreen1({super.key});
+
   @override
   Widget build(BuildContext context) {
     // 현재 날짜를 yyyy년 M월 d일 형식으로 변환
@@ -22,39 +26,39 @@ class ChatScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('채팅 화면'), // 제목 설정
-        backgroundColor: Color(0xFFC7B1D9), // 상단바 배경색
+        backgroundColor: const Color(0xFFC7B1D9), // 상단바 배경색
         leading: IconButton(
-          icon: Icon(Icons.arrow_back), // 뒤로 가기 아이콘
+          icon: const Icon(Icons.arrow_back), // 뒤로 가기 아이콘
           onPressed: () {
             Navigator.pop(context); // 이전 화면으로 돌아가기
           },
         ),
+        toolbarHeight: 30,
       ),
-      backgroundColor: Color(0xFFC7B1D9), // 배경색 설정 (연한 보라색 톤)
+      backgroundColor: const Color(0xFFC7B1D9), // 배경색 설정 (연한 보라색 톤)
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 30), // 상단 간격 추가
+            const SizedBox(height: 30), // 상단 간격 추가
             // 날짜 표시
             Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               decoration: BoxDecoration(
-                color: Color(0xFFEAEAEA),
+                color: const Color(0xFFEAEAEA),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Text(
-                '$currentDate',
-                style: TextStyle(
+                currentDate,
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             // Naver 카드
             buildChatBubble(
               imagePath: 'assets/img/naver_logo.png', // 이미지 경로
@@ -63,7 +67,7 @@ class ChatScreen extends StatelessWidget {
                   '“셀럽커플, 눈맞춤”…아이유, 스윗한 출국\n아이유가 해외 일정을 위해 26일 오전 인천국제공항을 통해 인도네시아 자카르타로 출국함.',
               likeCount: 20,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // YouTube 카드
             buildChatBubbleWithImage(
               logoPath: 'assets/img/youtube.png', // 왼쪽 로고 이미지 경로
@@ -93,7 +97,7 @@ class ChatScreen extends StatelessWidget {
           radius: 16, // 원의 크기
           child: Image.asset(imagePath, width: 24, height: 24), // 이미지 크기
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Expanded(
           child: Card(
             shape: RoundedRectangleBorder(
@@ -108,7 +112,7 @@ class ChatScreen extends StatelessWidget {
                     children: [
                       Text(
                         platform,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
@@ -116,18 +120,19 @@ class ChatScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     content,
-                    style: TextStyle(fontSize: 14, color: Colors.black54),
+                    style: const TextStyle(fontSize: 14, color: Colors.black54),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
                         '$likeCount ♥',
-                        style: TextStyle(fontSize: 14, color: Colors.black),
+                        style:
+                            const TextStyle(fontSize: 14, color: Colors.black),
                       ),
                     ],
                   ),
@@ -156,7 +161,7 @@ class ChatScreen extends StatelessWidget {
           radius: 16, // 원의 크기
           child: Image.asset(logoPath, width: 24, height: 24), // 로고 이미지
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Expanded(
           child: Card(
             shape: RoundedRectangleBorder(
@@ -167,7 +172,8 @@ class ChatScreen extends StatelessWidget {
               children: [
                 // 썸네일 이미지
                 ClipRRect(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(16)),
                   child: Image.asset(thumbnailPath,
                       width: double.infinity, height: 180, fit: BoxFit.cover),
                 ),
@@ -180,7 +186,7 @@ class ChatScreen extends StatelessWidget {
                         children: [
                           Text(
                             platform,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.black87,
@@ -188,18 +194,20 @@ class ChatScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         videoTitle,
-                        style: TextStyle(fontSize: 14, color: Colors.black54),
+                        style: const TextStyle(
+                            fontSize: 14, color: Colors.black54),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
                             '$likeCount ♥',
-                            style: TextStyle(fontSize: 14, color: Colors.black),
+                            style: const TextStyle(
+                                fontSize: 14, color: Colors.black),
                           ),
                         ],
                       ),
