@@ -16,8 +16,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ChatScreen1 extends StatelessWidget {
+class ChatScreen1 extends StatefulWidget {
   const ChatScreen1({super.key});
+
+  @override
+  _ChatScreen1State createState() => _ChatScreen1State();
+}
+
+class _ChatScreen1State extends State<ChatScreen1> {
+  // 좋아요 수를 저장할 변수
+  int naverLikeCount = 40; // 기본값 40으로 설정
+  int youtubeLikeCount = 55; // 기본값 55로 설정
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +74,12 @@ class ChatScreen1 extends StatelessWidget {
               platform: 'Naver',
               content:
                   '“셀럽커플, 눈맞춤”…아이유, 스윗한 출국\n아이유가 해외 일정을 위해 26일 오전 인천국제공항을 통해 인도네시아 자카르타로 출국함.',
-              likeCount: 20,
+              likeCount: naverLikeCount,
+              onLikePressed: () {
+                setState(() {
+                  naverLikeCount++; // 좋아요 수 증가
+                });
+              },
             ),
             const SizedBox(height: 16),
             // YouTube 카드
@@ -74,7 +88,12 @@ class ChatScreen1 extends StatelessWidget {
               thumbnailPath: 'assets/img/IU_youtube.png', // 썸네일 이미지 경로
               platform: 'Youtube',
               videoTitle: '커플의 달달한 눈맞춤♥',
-              likeCount: 20,
+              likeCount: youtubeLikeCount,
+              onLikePressed: () {
+                setState(() {
+                  youtubeLikeCount++; // 좋아요 수 증가
+                });
+              },
             ),
           ],
         ),
@@ -88,6 +107,7 @@ class ChatScreen1 extends StatelessWidget {
     required String platform,
     required String content,
     required int likeCount,
+    required VoidCallback onLikePressed, // 좋아요 버튼 콜백 추가
   }) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,9 +150,13 @@ class ChatScreen1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        '$likeCount ♥',
+                        '$likeCount',
                         style:
                             const TextStyle(fontSize: 14, color: Colors.black),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.favorite, color: Colors.red),
+                        onPressed: onLikePressed, // 좋아요 버튼 클릭 시 호출
                       ),
                     ],
                   ),
@@ -152,6 +176,7 @@ class ChatScreen1 extends StatelessWidget {
     required String platform,
     required String videoTitle,
     required int likeCount,
+    required VoidCallback onLikePressed, // 좋아요 버튼 콜백 추가
   }) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,9 +230,13 @@ class ChatScreen1 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            '$likeCount ♥',
+                            '$likeCount',
                             style: const TextStyle(
                                 fontSize: 14, color: Colors.black),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.favorite, color: Colors.red),
+                            onPressed: onLikePressed, // 좋아요 버튼 클릭 시 호출
                           ),
                         ],
                       ),
