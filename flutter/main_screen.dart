@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'post_1screen.dart';
+import 'post_2screen.dart';
+import 'profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,26 +27,26 @@ class MyHomePage extends StatelessWidget {
     final List<Post> posts = [
       Post(
         imageUrl:
-            'https://github.com/kjjyyy/Today-s-favorite-frontend/blob/main/test_photo/20NN1019/2021-10-19-twitter/(1)photo.png?raw=true',
+            'https://raw.githubusercontent.com/Today-s-favorite/Today-s-favorite-frontend/refs/heads/main/test_photo/20NN1019/2021-10-19-twitter/(1)photo.png',
         imageHeight: 100,
         text:
             'IU Digital Single \n <strawberry moon> MV 📽  \n\n #아이유 #IU \n #strawberry_moon \n #자정에_뜨는_아이유의_딸기달 \n #strawberrymoonWithIU',
-        likeCount: 0,
+        likeCount: 100, // 기본값을 100으로 설정
       ),
       Post(
         imageUrl:
-            'https://github.com/kjjyyy/Today-s-favorite-frontend/blob/main/test_photo/20NN1019/2018-10-19-twitter/(4)photo.png?raw=true',
+            'https://raw.githubusercontent.com/Today-s-favorite/Today-s-favorite-frontend/refs/heads/main/test_photo/20NN1019/2018-10-19-twitter/(4)photo.png',
         imageHeight: 100,
         text:
             "[IU TV] '#삐삐(#BBIBBI)' M/V Making \n\n #IU YouTube Channel ▶▶▶ \n\n #아이유",
-        likeCount: 0,
+        likeCount: 84, // 기본값을 100으로 설정
       ),
       Post(
         imageUrl:
-            'https://github.com/kjjyyy/Today-s-favorite-frontend/blob/main/test_photo/20NN1019/2020-10-19-twitter/(2)photo.png?raw=true',
+            'https://raw.githubusercontent.com/Today-s-favorite/Today-s-favorite-frontend/refs/heads/main/test_photo/20NN1019/2020-10-19-twitter/(2)photo.png',
         imageHeight: 140,
         text: '생명력을 키우는 물 \n 제주삼다수로 \n 우리 몸에도 촉촉함을 \n 선사해보는 건 어떨까요?😊',
-        likeCount: 0,
+        likeCount: 77, // 기본값을 100으로 설정
       ),
     ];
 
@@ -83,6 +86,35 @@ class MyHomePage extends StatelessWidget {
         ),
         centerTitle: true,
         toolbarHeight: 70,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              children: [
+                const Text(
+                  '마이페이지',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.arrow_forward),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const MyLikeListPage(), // MyLikeListPage로 이동
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -134,7 +166,13 @@ class MyHomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(7),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ChatScreen1()),
+                    );
+                  },
                   child: const Text("오늘의 IU",
                       style: TextStyle(
                         color: Colors.black,
@@ -150,7 +188,13 @@ class MyHomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(7),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ChatScreen2()),
+                    );
+                  },
                   child: const Text("N년전 오늘",
                       style: TextStyle(
                         color: Colors.black,
@@ -235,11 +279,11 @@ class _PostCardState extends State<PostCard> {
                   height: 10, // Adjust height as needed
                 ),
                 const SizedBox(width: 5),
-                Expanded(
+                const Expanded(
                   // Expanded 사용
                   child: Text(
                     "Twitter", // Replace with dynamic platform name if necessary
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
