@@ -20,39 +20,41 @@ class ChatScreen2 extends StatefulWidget {
   const ChatScreen2({super.key});
 
   @override
-  _ChatScreen1State createState() => _ChatScreen1State();
+  _ChatScreen2State createState() => _ChatScreen2State();
 }
 
-class _ChatScreen1State extends State<ChatScreen2> {
-  // 좋아요 수를 저장할 변수
-  int naverLikeCount = 40; // 기본값 40으로 설정
-  int youtubeLikeCount = 55; // 기본값 55로 설정
+class _ChatScreen2State extends State<ChatScreen2> {
+  int naverLikeCount = 20;
+  int youtubeLikeCount = 20;
+  int textOnlyLikeCount = 10;
+  int additionalLikeCount1 = 15;
+  int additionalLikeCount2 = 5;
 
   @override
   Widget build(BuildContext context) {
-    // 현재 날짜를 yyyy년 M월 d일 형식으로 변환
-    String currentDate = DateFormat('yyyy년 M월 d일').format(DateTime.now());
+    String currentDate =
+        DateFormat('yyyy년 M월 d일').format(DateTime(2024, 10, 29));
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFC7B1D9), // 상단바 배경색
+        backgroundColor: const Color(0xFFC7B1D9),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back), // 뒤로 가기 아이콘
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context); // 이전 화면으로 돌아가기
+            Navigator.pop(context);
           },
         ),
         toolbarHeight: 30,
       ),
-      backgroundColor: const Color(0xFFC7B1D9), // 배경색 설정 (연한 보라색 톤)
+      backgroundColor: const Color(0xFFC7B1D9),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
+          // Column을 ListView로 변경
           children: [
-            const SizedBox(height: 30), // 상단 간격 추가
-            // 날짜 표시
+            const SizedBox(height: 30),
             Container(
+              width: 80,
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               decoration: BoxDecoration(
                 color: const Color(0xFFEAEAEA),
@@ -67,31 +69,43 @@ class _ChatScreen1State extends State<ChatScreen2> {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
-            // Naver 카드
-            buildChatBubble(
-              imagePath: 'assets/img/naver_logo.png', // 이미지 경로
-              platform: 'Naver',
-              content:
-                  '“셀럽커플, 눈맞춤”…아이유, 스윗한 출국\n아이유가 해외 일정을 위해 26일 오전 인천국제공항을 통해 인도네시아 자카르타로 출국함.',
-              likeCount: naverLikeCount,
-              onLikePressed: () {
+            const SizedBox(height: 16),
+            buildChatBubbleWithImage(
+              logoPath: 'assets/img/instagram.png',
+              thumbnailPath: 'assets/img/IU_Ins.png',
+              platform: 'Instagram',
+              videoTitle: "♥제주삼다수 X 아이유\n 11월 달력 大공개!♥",
+              likeCount: youtubeLikeCount,
+              onLikeTap: () {
                 setState(() {
-                  naverLikeCount++; // 좋아요 수 증가
+                  youtubeLikeCount++;
                 });
               },
             ),
             const SizedBox(height: 16),
-            // YouTube 카드
             buildChatBubbleWithImage(
-              logoPath: 'assets/img/youtube.png', // 왼쪽 로고 이미지 경로
-              thumbnailPath: 'assets/img/IU_youtube.png', // 썸네일 이미지 경로
-              platform: 'Youtube',
-              videoTitle: '커플의 달달한 눈맞춤♥',
-              likeCount: youtubeLikeCount,
-              onLikePressed: () {
+              logoPath: 'assets/img/twitter.png',
+              thumbnailPath: 'assets/img/IU_X(1).png',
+              platform: 'Twitter',
+              videoTitle:
+                  "[IU TV] 장만월 사장의 삼도천 건너기 전 마지막 업무! \n배우 이지은의 스페셜한 \n인터뷰 현장!👩‍❤️‍👩🗣\n\nIU YouTube Channel ▶▶▶ https://youtu.be/kUsCuCiUVs0\n\n#이지은 #아이유 #이지은에게_물어봐",
+              likeCount: additionalLikeCount1,
+              onLikeTap: () {
                 setState(() {
-                  youtubeLikeCount++; // 좋아요 수 증가
+                  additionalLikeCount1++;
+                });
+              },
+            ),
+            const SizedBox(height: 16),
+            buildChatBubbleWithImage(
+              logoPath: 'assets/img/twitter.png',
+              thumbnailPath: 'assets/img/IU_X(2).png',
+              platform: 'Twitter',
+              videoTitle: "아이유 미니 5집 선공개 곡 \n<Love poem> Teaser Image",
+              likeCount: additionalLikeCount2,
+              onLikeTap: () {
+                setState(() {
+                  additionalLikeCount2++;
                 });
               },
             ),
@@ -101,21 +115,20 @@ class _ChatScreen1State extends State<ChatScreen2> {
     );
   }
 
-  // Naver 카드 만들기
   Widget buildChatBubble({
-    required String imagePath,
+    required String logoPath,
     required String platform,
     required String content,
     required int likeCount,
-    required VoidCallback onLikePressed, // 좋아요 버튼 콜백 추가
+    required VoidCallback onLikeTap,
   }) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CircleAvatar(
-          backgroundColor: Colors.white, // 하얀 원
-          radius: 16, // 원의 크기
-          child: Image.asset(imagePath, width: 24, height: 24), // 이미지 크기
+          backgroundColor: Colors.white,
+          radius: 16,
+          child: Image.asset(logoPath, width: 24, height: 24), // logoPath 사용
         ),
         const SizedBox(width: 8),
         Expanded(
@@ -128,17 +141,13 @@ class _ChatScreen1State extends State<ChatScreen2> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        platform,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
-                        ),
-                      ),
-                    ],
+                  Text(
+                    platform,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Text(
@@ -149,14 +158,13 @@ class _ChatScreen1State extends State<ChatScreen2> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        '$likeCount',
-                        style:
-                            const TextStyle(fontSize: 14, color: Colors.black),
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.favorite, color: Colors.red),
-                        onPressed: onLikePressed, // 좋아요 버튼 클릭 시 호출
+                      GestureDetector(
+                        onTap: onLikeTap,
+                        child: Text(
+                          '$likeCount ♥',
+                          style: const TextStyle(
+                              fontSize: 14, color: Colors.black),
+                        ),
                       ),
                     ],
                   ),
@@ -169,22 +177,21 @@ class _ChatScreen1State extends State<ChatScreen2> {
     );
   }
 
-  // YouTube 카드 만들기 (이미지 포함)
   Widget buildChatBubbleWithImage({
-    required String logoPath, // 로고 이미지 경로
-    required String thumbnailPath, // 썸네일 이미지 경로
+    required String logoPath,
+    required String thumbnailPath,
     required String platform,
     required String videoTitle,
     required int likeCount,
-    required VoidCallback onLikePressed, // 좋아요 버튼 콜백 추가
+    required VoidCallback onLikeTap,
   }) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CircleAvatar(
-          backgroundColor: Colors.white, // 하얀 원
-          radius: 16, // 원의 크기
-          child: Image.asset(logoPath, width: 24, height: 24), // 로고 이미지
+          backgroundColor: Colors.white,
+          radius: 16,
+          child: Image.asset(logoPath, width: 24, height: 24), // logoPath 사용
         ),
         const SizedBox(width: 8),
         Expanded(
@@ -195,7 +202,6 @@ class _ChatScreen1State extends State<ChatScreen2> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 썸네일 이미지
                 ClipRRect(
                   borderRadius:
                       const BorderRadius.vertical(top: Radius.circular(16)),
@@ -207,17 +213,13 @@ class _ChatScreen1State extends State<ChatScreen2> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            platform,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87,
-                            ),
-                          ),
-                        ],
+                      Text(
+                        platform,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
                       ),
                       const SizedBox(height: 8),
                       Text(
@@ -229,14 +231,13 @@ class _ChatScreen1State extends State<ChatScreen2> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text(
-                            '$likeCount',
-                            style: const TextStyle(
-                                fontSize: 14, color: Colors.black),
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.favorite, color: Colors.red),
-                            onPressed: onLikePressed, // 좋아요 버튼 클릭 시 호출
+                          GestureDetector(
+                            onTap: onLikeTap,
+                            child: Text(
+                              '$likeCount ♥',
+                              style: const TextStyle(
+                                  fontSize: 14, color: Colors.black),
+                            ),
                           ),
                         ],
                       ),
@@ -244,6 +245,68 @@ class _ChatScreen1State extends State<ChatScreen2> {
                   ),
                 ),
               ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget buildTextOnlyChatBubble({
+    required String logoPath,
+    required String platform,
+    required String content,
+    required int likeCount,
+    required VoidCallback onLikeTap,
+  }) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CircleAvatar(
+          backgroundColor: Colors.white,
+          radius: 16,
+          child: Image.asset(logoPath, width: 24, height: 24), // logoPath 사용
+        ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    platform,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    content,
+                    style: const TextStyle(fontSize: 14, color: Colors.black54),
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: onLikeTap,
+                        child: Text(
+                          '$likeCount ♥',
+                          style: const TextStyle(
+                              fontSize: 14, color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
