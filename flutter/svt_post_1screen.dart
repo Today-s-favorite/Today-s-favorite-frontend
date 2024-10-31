@@ -31,7 +31,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
   @override
   Widget build(BuildContext context) {
     String currentDate =
-        DateFormat('yyyy년 M월 d일').format(DateTime(2024, 10, 21));
+        DateFormat('yyyy년 M월 d일').format(DateTime(2024, 10, 29));
 
     return Scaffold(
       appBar: AppBar(
@@ -73,7 +73,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                 imagePath: 'assets/img/naver_logo.png',
                 platform: 'Naver',
                 content:
-                    "세븐틴의 미니 12집 ‘SPILL THE FEELS’는 첫 주에 316만 장 이상 판매되며 올해 K팝 앨범 중 초동 판매량 최고 기록을 세웠습니다. \n이는 올해 발매된 K팝 앨범 중 유일하게 첫 주에 300만 장 이상 판매된 음반으로, 세븐틴의 음반 파워를 입증했습니다. \n세븐틴은 미국 5개 도시와 일본 돔 투어를 포함한 월드 투어로 팬들과 만날 예정입니다.",
+                    "플레디스엔터테인먼트는 10월 29일 세븐틴 '엠카운트다운' 사전 녹화에서 발생한 방청객 밀집 상황에 대해 휴식 공간 제공 등 현장 조치를 했다고 밝혔다. \n일부 팬이 과밀로 인해 어지러움을 호소하며 이송되는 일이 발생했다. \n세븐틴은 현재 월드투어 중이며, 미국 텍사스와 오클랜드, 로스앤젤레스 공연을 앞두고 있다.",
                 likeCount: naverLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -99,21 +99,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                 logoPath: 'assets/img/youtube.png',
                 thumbnailPath: 'assets/img/youtube(1).png',
                 platform: 'Youtube',
-                videoTitle: '#LOVE_MONEY_FAME ♥',
-                likeCount: youtubeLikeCount,
-                onLikePressed: () {
-                  setState(() {
-                    youtubeLikeCount++;
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              buildChatBubbleWithImage(
-                logoPath: 'assets/img/youtube.png',
-                thumbnailPath: 'assets/img/youtube(2).png',
-                platform: 'Youtube',
-                videoTitle:
-                    '#LOVE_MONEY_FAME 🌹 with #문상민 #MoonSangMin #승관 #SEUNGKWAN #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
+                videoTitle: 'Wow🫢',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -127,7 +113,21 @@ class _ChatScreen1State extends State<ChatScreen1> {
                 thumbnailPath: 'assets/img/youtube(3).png',
                 platform: 'Youtube',
                 videoTitle:
-                    '#LOVE_MONEY_FAME 🌹 with #YUYANG #MAOXIAOTONG #YANGDI #PANWEIBO #준#JUN#SEVENTEEN#세븐틴#SPILL_THE_FEELS',
+                    '#LOVE_MONEY_FAME 🌹 with #문상민 #MoonSangMin #승관 #SEUNGKWAN #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
+                likeCount: youtubeLikeCount,
+                onLikePressed: () {
+                  setState(() {
+                    youtubeLikeCount++;
+                  });
+                },
+              ),
+              const SizedBox(height: 16),
+              buildChatBubbleWithImage(
+                logoPath: 'assets/img/youtube.png',
+                thumbnailPath: 'assets/img/youtube(2).png',
+                platform: 'Youtube',
+                videoTitle:
+                    '#LOVE_MONEY_FAME at 1,000ft up Empire State Building #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
