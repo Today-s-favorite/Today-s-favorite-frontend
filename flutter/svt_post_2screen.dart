@@ -30,7 +30,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
   @override
   Widget build(BuildContext context) {
     String currentDate =
-        DateFormat('yyyy년 M월 d일').format(DateTime(2024, 10, 21));
+        DateFormat('yyyy년 M월 d일').format(DateTime(2024, 10, 29));
 
     return Scaffold(
       appBar: AppBar(
@@ -70,10 +70,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 30),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/24.10.21 X.png',
+                thumbnailPath: 'assets/img/24.10.29(1) X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '[TEA 8] 캐럿들의 요즘 고민은 무엇인가요? | 버논이와 티 타임🍵\n\n▶️ https://youtu.be/aCk4rCnhyGE\n\n#THE8 #디에잇\n#VERNON #버논\n#SEVENTEEN #세븐틴\n #SPILL_THE_FEELS\n#TEA8 #티에잇타임',
+                    '\'LOVE, MONEY, FAME (feat. DJ Khaled)\' Photo Sketch\n\n▶️https://weverse.io/seventeen/media/4-183671670\n\n#SEVENTEEN #세븐틴\n#SPILL_THE_FEELS\n#LOVE_MONEY_FAME',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -84,9 +84,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/23.10.21(1) X.jpg',
+                thumbnailPath: 'assets/img/24.10.29(2) X.png',
                 platform: 'Twitter',
-                videoTitle: '[17\'S JUN] 재미있는 여정',
+                videoTitle:
+                    '[NEWS] Tomorrow on @GMA, catch SEVENTEEN performing the English version of “LOVE, MONEY, FAME (feat. DJ Khaled)" LIVE from Times Square! Don\'t miss it!\n\n#SEVENTEEN #세븐틴\n#SPILL_THE_FEELS\n#LOVE_MONEY_FAME\n#GMA #GoodMorningAmerica',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -97,10 +98,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/23.10.21(2) X.png',
+                thumbnailPath: 'assets/img/22.10.29 X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '[VIDEO] #놀라운토요일\n\n[예고] 정체 불명 천국(?) 속 도레미와 존재 자체가 천국인 세븐틴이 떴다!🥰 민규 X 승관 X 디노💗\n▶️ https://tv.naver.com/v/41693331\n\n#MINGYU #민규\n#SEUNGKWAN #승관\n#DINO #디노\n#SEVENTEEN #세븐틴',
+                    '[GOING SEVENTEEN 2020] EP.44 TTT #1 (Hyperrealism Ver.) 10 Million Views🍻\n▶️ http://youtu.be/OjbjlNbQqLc\n\n#SEVENTEEN #세븐틴\n#GOING_SVT\n#GOSE_TTT_10MViews\n#고잉세븐틴_티티티_천만뷰',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -111,10 +112,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/22.10.21(1) X.png',
+                thumbnailPath: 'assets/img/21.10.29(1) X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '\'TOUR-ING : SEVENTEEN WORLD TOUR [BE THE SUN]\' VOD Teaser #1\n\n▶ https://youtu.be/FdSWlfgfynM\n\n#SEVENTEEN #세븐틴\n#SVT_WORLDTOUR_BETHESUN\n#BETHESUN #TOURING',
+                    '[17\'S] #뮤직뱅크 1위까지 해냈다! 세븐틴🏆🏆\n\n#Rockwithyou 활동 무대는\n캐럿들 응원으로 더 에너지 넘친다🔥 \n\n#세븐틴_뮤직뱅크_1위_축하해👏\n#Rockwithyou2ndWin',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -125,10 +126,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/22.10.21(2) X.png',
+                thumbnailPath: 'assets/img/21.10.29(2) X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '[INSIDE SEVENTEEN] SEVENTEEN WORLD TOUR [BE THE SUN] NORTH AMERICA BEHIND #1\n\n▶https://youtu.be/DLaURAkoqUg\n\n#SEVENTEEN #세븐틴\n#INSIDE_SVT',
+                    '[SEVENTEEN\'s SNAPSHOOT] EP.10 연습실 노래방 (Practice Studio Karaoke)\n\n▶ https://youtu.be/v5PrAprWRac\n\n#세븐틴 #SEVENTEEN\n#SVT_SNAPSHOOT',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -139,10 +140,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/21.10.21 X.png',
+                thumbnailPath: 'assets/img/21.10.29(3) X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '[17\’S] 우리 뿌가 또 해냈다‼️\n11인 출연권으로 세븐틴 문특 등장🎉\n문특과 세븐틴 케미는 말해 뭐해..💗\n\n#다음_주_문특도_기대기대😉',
+                    'SEVENTEEN (세븐틴) \'Rock with you\' Official MV (Choreography Version)\n\n▶ https://youtu.be/EhrFmgeqo6k\n\n#세븐틴 #SEVENTEEN\n#Attacca\n#Rockwithyou\n#SVT_Rockwithyou',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -153,9 +154,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/20.10.21 X.png',
+                thumbnailPath: 'assets/img/21.10.29(4) X.png',
                 platform: 'Twitter',
-                videoTitle: '[17\'S 우지] HOME;RUN⚾️',
+                videoTitle:
+                    '[VIDEO] #뮤직뱅크\n\nRock with you - 세븐틴 (SEVENTEEN)\n▶ https://tv.naver.com/v/23242943\n\n#세븐틴 #SEVENTEEN\n#Attacca\n#Rockwithyou\n#SVT_Rockwithyou',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -166,10 +168,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/19.10.21(1) X.png',
+                thumbnailPath: 'assets/img/20.10.29(1) X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '[17\'S] 핵인싸 세봉이들의 유쾌한 노래방탈출❗ 노래는 당연🎤 어떤 미션도 척척해내는 세봉이들🤟 도대체 못하는 게 뭐지🤔\n\n#캐럿들은_내적_땐스_땐스🕺\n#세봉이들_덕분에_귀_호강은_덤🥰',
+                    '[17\'S] 👤세븐틴이가 #엠카운트다운 에서 1위 트로피를 가져왔단다. 캐럿들이 준게 분명하다👤\n\n모두 응원해 준 캐럿들 덕분이에요! 정말 감사합니다💖💙 캐럿들이 있어 오늘도 반짝반짝 빛나는 세봉이들✨\n\n#세븐틴_엠카운트다운_1위_축하해🎉\n#HOME_RUN2ndWin🏆',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -180,10 +182,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/18.10.21(1) X.png',
+                thumbnailPath: 'assets/img/20.10.29(2) X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '[17\'S 쿱스] 추운 날씨에도 함께해준 우리 캐럿들을 비롯해 많은 케이팝 팬 여러분들 덕분에 큰 감동 받았던 무대였습니다. 감사합니다!',
+                    '[GOING MOMENT] 번지 점프?! 그까짓 것 세븐틴은 하,하면 해...! (덜덜)\n\n▶ https://youtu.be/MBNK0u3sCaI\n\n#세븐틴 #SEVENTEEN\n#GOING_SVT',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -194,10 +196,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
                 logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/18.10.21(2) X.png',
+                thumbnailPath: 'assets/img/20.10.29(3) X.png',
                 platform: 'Twitter',
                 videoTitle:
-                    '[17\'S 민규] 짜잔~🤗 오늘은 특별히 UHD특집으로 진행된 인기가요❤️ 고퀄로 보는 밍엠씨라 더 #멋진가요?👀✨ 꼬꼬마 시절부터 러블리했던 밍구💕 사랑둥이 세븐틴 민규가 되어 캐럿들 심장 루팡🎩\n#밍구_몸엔_물보다_사랑이_많아 🙆‍♂️\n#밍랑둥 😘',
+                    '[VIDEO] #엠카운트다운\n\n\'1위\' ♨짜릿하게 터진 ‘세븐틴’의 ‘HOME;RUN’ 무대▶️ https://tv.naver.com/v/16459428\n\n#SEVENTEEN #세븐틴\n#Semicolon #세미콜론\n#HOME_RUN',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -207,11 +209,10 @@ class _ChatScreen1State extends State<ChatScreen1> {
               ),
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
-                logoPath: 'assets/img/instagram.png',
-                thumbnailPath: 'assets/img/24.10.21 Ins.png',
-                platform: 'Instagram',
-                videoTitle:
-                    'SEVENTEEN (세븐틴) \'Eyes on you\' Official MV\n\n#SEVENTEEN #세븐틴 #SPII_THE_FEELS #Eyes_on_you',
+                logoPath: 'assets/img/twitter.png',
+                thumbnailPath: 'assets/img/20.10.29(4) X.png',
+                platform: 'Twitter',
+                videoTitle: '[17\'S 쿱스] 너무 영광스러운 자리였습니다',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -221,11 +222,11 @@ class _ChatScreen1State extends State<ChatScreen1> {
               ),
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
-                logoPath: 'assets/img/instagram.png',
-                thumbnailPath: 'assets/img/23.10.21 Ins.png',
-                platform: 'Instagram',
+                logoPath: 'assets/img/twitter.png',
+                thumbnailPath: 'assets/img/19.10.29 X.png',
+                platform: 'Twitter',
                 videoTitle:
-                    'SEVENTEEN (세븐틴) \'음악의 신\' Official Teaser 2\n\n2023.10.23 6PM (KST)\n2023.10.23 5AM (ET)\n\n#SEVENTEEN #세븐틴 #SEVENTEENTH_HEAVEN #음악의 신 #GodOfMusic',
+                    '[VIDEO] #뮤직뱅크\n\n[K-Choreo] 세븐틴 직캠 독 Fear (SEVENTEEN Choreography) l @ MusicBank 191004\n▶ https://tv.naver.com/v/10631249\n\n[K-Choreo] 세븐틴 직캠 스냅슛 Snapshoot (SEVENTEEN Choreography) l @ MusicBank 191004\n▶ https://tv.naver.com/v/10631096\n\n#세븐틴 #SEVENTEEN',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -235,11 +236,25 @@ class _ChatScreen1State extends State<ChatScreen1> {
               ),
               const SizedBox(height: 16),
               buildChatBubbleWithImage(
-                logoPath: 'assets/img/instagram.png',
-                thumbnailPath: 'assets/img/21.10.21 Ins.png',
-                platform: 'Instagram',
+                logoPath: 'assets/img/twitter.png',
+                thumbnailPath: 'assets/img/17.10.29 X.png',
+                platform: 'Twitter',
                 videoTitle:
-                    'SEVENTEEN (세븐틴) \'Rock with you\' Official Teaser 2\n\nhttps://youtu.be/i75GKB102Fk\n\n2021.10.22 1PM (KST)\n2021.10.22 0AM (ET)',
+                    'SEVENTEEN 2ND ALBUM \'TEEN, AGE\' ALBUM PACKAGE PREVIEW\n#SEVENTEEN #세븐틴 #TEEN_AGE #20171106_6PM',
+                likeCount: youtubeLikeCount,
+                onLikePressed: () {
+                  setState(() {
+                    youtubeLikeCount++;
+                  });
+                },
+              ),
+              const SizedBox(height: 16),
+              buildChatBubbleWithImage(
+                logoPath: 'assets/img/twitter.png',
+                thumbnailPath: 'assets/img/15.10.29 X.png',
+                platform: 'Twitter',
+                videoTitle:
+                    '[Doogi PD] 지인이 사진을 보내줬다. 쿱스가   생각나서 쿱스에게 보내주었다. 혼이 났다.\n#그래도_형인데 #솔직히_닮았지 #꽃미남',
                 likeCount: youtubeLikeCount,
                 onLikePressed: () {
                   setState(() {
