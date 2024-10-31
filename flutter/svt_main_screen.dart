@@ -33,17 +33,17 @@ class MyHomePage extends StatelessWidget {
         likeCount: 20,
       ),
       Post(
-        imageUrl: 'assets/img/24.10.21 Ins.png',
+        imageUrl: 'assets/img/youtube(2).png',
         imageHeight: 100,
         text:
-            "SEVENTEEN (세븐틴) 'Eyes on you' Official MV\n\n#SEVENTEEN #세븐틴 #SPII_THE_FEELS #Eyes_on_you",
+            "#LOVE_MONEY_FAME at 1,000ft up Empire State Building #SEVENTEEN #세븐틴 #SPILL_THE_FEELS",
         likeCount: 15,
       ),
       Post(
-        imageUrl: 'assets/img/24.10.21 X.png',
+        imageUrl: 'assets/img/22.10.29 X.png',
         imageHeight: 140,
         text:
-            '[TEA 8] 캐럿들의 요즘 고민은 무엇인가요? | 버논이와 티 타임🍵\n\n▶️ https://youtu.be/aCk4rCnhyGE\n\n#THE8 #디에잇\n#VERNON #버논\n#SEVENTEEN #세븐틴\n #SPILL_THE_FEELS\n#TEA8 #티에잇타임',
+            '[GOING SEVENTEEN 2020] EP.44 TTT #1 (Hyperrealism Ver.) 10 Million Views🍻\n▶️ http://youtu.be/OjbjlNbQqLc\n\n#SEVENTEEN #세븐틴\n#GOING_SVT\n#GOSE_TTT_10MViews\n#고잉세븐틴_티티티_천만뷰',
         likeCount: 15,
       ),
     ];
