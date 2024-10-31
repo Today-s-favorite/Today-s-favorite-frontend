@@ -23,41 +23,35 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Example data, replace with data from AWS API
     final List<Post> posts = [
       Post(
-        imageUrl:
-            'https://raw.githubusercontent.com/Today-s-favorite/Today-s-favorite-frontend/refs/heads/main/test_photo/20NN1019/2021-10-19-twitter/(1)photo.png',
-        imageHeight: 100,
-        text:
-            'IU Digital Single \n <strawberry moon> MV 📽  \n\n #아이유 #IU \n #strawberry_moon \n #자정에_뜨는_아이유의_딸기달 \n #strawberrymoonWithIU',
-        likeCount: 100, // 기본값을 100으로 설정
+        platform: 'Twitter',
+        logoUrl: 'assets/img/twitter.png', // Added logoUrl
+        imageUrl: 'assets/img/IU_X(2).png',
+        imageHeight: 150,
+        text: '아이유 미니 5집 선공개 곡 \n<Love poem> Teaser Image',
+        likeCount: 20,
       ),
       Post(
-        imageUrl:
-            'https://raw.githubusercontent.com/Today-s-favorite/Today-s-favorite-frontend/refs/heads/main/test_photo/20NN1019/2018-10-19-twitter/(4)photo.png',
-        imageHeight: 100,
-        text:
-            "[IU TV] '#삐삐(#BBIBBI)' M/V Making \n\n #IU YouTube Channel ▶▶▶ \n\n #아이유",
-        likeCount: 84, // 기본값을 100으로 설정
+        platform: 'Instagram',
+        logoUrl: 'assets/img/instagram.png', // Added logoUrl
+        imageUrl: 'assets/img/IU_Ins.png',
+        imageHeight: 150,
+        text: "♥제주삼다수 X 아이유\n 11월 달력 大공개!♥",
+        likeCount: 15,
       ),
       Post(
-        imageUrl:
-            'https://raw.githubusercontent.com/Today-s-favorite/Today-s-favorite-frontend/refs/heads/main/test_photo/20NN1019/2020-10-19-twitter/(2)photo.png',
-        imageHeight: 140,
-        text: '생명력을 키우는 물 \n 제주삼다수로 \n 우리 몸에도 촉촉함을 \n 선사해보는 건 어떨까요?😊',
-        likeCount: 77, // 기본값을 100으로 설정
+        platform: 'Naver',
+        logoUrl: 'assets/img/naver_logo.png', // Added logoUrl
+        text:
+            '\n\n\“1위 아이유·2위 이승기·3위 김민석\”\n\n랭키파이가 10월 4주차 발라드 가수 트렌드지수를 발표하며, 아이유가 1위, 이승기가 2위, 김민석이 3위에 올랐다.\n트렌드지수는 구글 검색량과 네이버 검색 데이터를 종합하여 산출되며, 성별 선호도에서 아이유는 여성(62%)에게 더 많은 인기를 끌었다.\n연령대별 선호도에서는 20대가 아이유를 가장 많이 선호(30%)하며, 각 가수의 인기 경향이 연령대별로 뚜렷하게 구분되었다.',
+        likeCount: 15,
       ),
     ];
 
-    // Get screen width
     final double width = MediaQuery.of(context).size.width;
-
-    // Set item width and spacing
     const double itemWidth = 140.0;
     const double crossAxisSpacing = 5.0;
-
-    // Calculate number of columns
     final int crossAxisCount = (width / (itemWidth + crossAxisSpacing)).floor();
 
     return Scaffold(
@@ -105,8 +99,7 @@ class MyHomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            const MyLikeListPage(), // MyLikeListPage로 이동
+                        builder: (context) => const MyLikeListPage(),
                       ),
                     );
                   },
@@ -120,7 +113,6 @@ class MyHomePage extends StatelessWidget {
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
-            // Search Bar
             SizedBox(
               width: 800,
               height: 45,
@@ -153,60 +145,59 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-
-            // Button Row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFE4E724),
-                    fixedSize: const Size(175, 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFE4E724),
+                      fixedSize: const Size(175, 30),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatScreen1()),
+                      );
+                    },
+                    child: const Text("오늘의 IU",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        )),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ChatScreen1()),
-                    );
-                  },
-                  child: const Text("오늘의 IU",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      )),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFE4E724),
-                    fixedSize: const Size(175, 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFE4E724),
+                      fixedSize: const Size(175, 30),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatScreen2()),
+                      );
+                    },
+                    child: const Text("N년전 오늘",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        )),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ChatScreen2()),
-                    );
-                  },
-                  child: const Text("N년전 오늘",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      )),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(height: 10),
-
-            // "Today Hot" section
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -218,8 +209,6 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 5),
-
-            // Cards for content with border
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(7.0),
@@ -252,73 +241,64 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class PostCard extends StatefulWidget {
+class PostCard extends StatelessWidget {
   final Post post;
 
   const PostCard({super.key, required this.post});
 
-  @override
-  _PostCardState createState() => _PostCardState();
-}
-
-class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
       color: const Color.fromRGBO(236, 238, 104, 1),
       child: Column(
         children: [
-          // Row for the logo and SNS name
           Padding(
             padding: const EdgeInsets.all(5.0),
             child: Row(
               children: [
-                // Logo (replace with actual path to the local image in the assets folder)
                 Image.asset(
-                  'assets/img/twitter.png',
-                  height: 10, // Adjust height as needed
+                  post.logoUrl, // Use logoUrl here
+                  height: 20, // Adjusted height for logo
                 ),
                 const SizedBox(width: 5),
-                const Expanded(
-                  // Expanded 사용
+                Expanded(
                   child: Text(
-                    "Twitter", // Replace with dynamic platform name if necessary
-                    style: TextStyle(
-                      fontSize: 14,
+                    post.platform,
+                    style: const TextStyle(
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
-                    overflow: TextOverflow.ellipsis, // 텍스트가 넘치면 "..." 처리
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
             ),
           ),
-          if (widget.post.imageUrl.isNotEmpty) ...[
+          if (post.imageUrl.isNotEmpty) ...[
             Container(
               padding: const EdgeInsets.all(7.0),
               child: SizedBox(
-                height: widget.post.imageHeight,
+                height: post.imageHeight,
                 child: Center(
-                  child: Image.network(
-                    widget.post.imageUrl,
+                  child: Image.asset(
+                    post.imageUrl,
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Text(
-                widget.post.text,
-                style: const TextStyle(
-                  fontSize: 8,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
           ],
-          // Align the like button and count to the bottom-right corner
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Text(
+              post.text,
+              style: const TextStyle(
+                fontSize: 8,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
           Expanded(
             child: Align(
               alignment: Alignment.bottomRight,
@@ -326,7 +306,7 @@ class _PostCardState extends State<PostCard> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    widget.post.likeCount.toString(),
+                    post.likeCount.toString(),
                     style: const TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w800,
@@ -337,11 +317,7 @@ class _PostCardState extends State<PostCard> {
                       '❤️',
                       style: TextStyle(fontSize: 12),
                     ),
-                    onPressed: () {
-                      setState(() {
-                        widget.post.likeCount++;
-                      });
-                    },
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -354,14 +330,18 @@ class _PostCardState extends State<PostCard> {
 }
 
 class Post {
+  final String platform;
+  final String logoUrl; // New logoUrl property
   final String imageUrl;
   final double imageHeight;
   final String text;
-  int likeCount;
+  final int likeCount;
 
   Post({
-    required this.imageUrl,
-    required this.imageHeight,
+    required this.platform,
+    this.logoUrl = '', // Default value for logoUrl
+    this.imageUrl = '',
+    this.imageHeight = 0,
     required this.text,
     required this.likeCount,
   });
