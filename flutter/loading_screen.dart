@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart'; // 로그인 화면을 가져옵니다.
+import 'login_screen.dart'; // 로그인 화면
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({super.key});
@@ -16,7 +16,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   Future<void> _loadData() async {
-    await Future.delayed(const Duration(seconds: 5)); // 5초 대기
+    await Future.delayed(const Duration(seconds: 3)); // 5초 대기
 
     // 로딩이 끝난 후 로그인 화면으로 이동
     Navigator.of(context).pushReplacement(
@@ -28,12 +28,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               '오늘의 최애',
               style: TextStyle(
