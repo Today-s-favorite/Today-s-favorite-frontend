@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,13 @@ class MyLikeListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('my page'),
+        title: const Text(
+          'My Page',
+          style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 16,
+          ),
+        ),
         backgroundColor: const Color(0xFFE4E724), // 상단바 배경색
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -42,7 +49,7 @@ class MyLikeListPage extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              _buildProfileSection(),
+              _buildProfileSection(context),
               const SizedBox(height: 20),
               _buildLikeList(context),
             ],
@@ -52,7 +59,7 @@ class MyLikeListPage extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileSection() {
+  Widget _buildProfileSection(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -92,15 +99,36 @@ class MyLikeListPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFE4E724), // 버튼 색상 변경
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+              Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFE4E724), // 버튼 색상 변경
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    child: const Text('프로필 편집'),
                   ),
-                ),
-                child: const Text('프로필 편집'),
+                  const SizedBox(width: 8), // 버튼 간격
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFE4E724), // 로그아웃 버튼 색상 변경
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    child: const Text('로그아웃'),
+                  ),
+                ],
               ),
             ],
           ),
@@ -125,6 +153,9 @@ class MyLikeListPage extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
+        _buildLikeItem(Icons.photo, '♥제주삼다수 X 아이유 11월 달력 大공개!♥', ''),
+        _buildLikeItem(Icons.article, '1위 아이유·2위 이승기·3위 김민석',
+            'https://www.koreastocknews.com/news/articleView.html?idxno=104954'),
         _buildLikeItem(Icons.video_library, '[IU TV] 이븐하게 미국 조식 먹어 봄🥰',
             'https://www.youtube.com/watch?v=h-M2OeuyZmg&t=4s'),
         _buildLikeItem(Icons.article, '아이유, 필승의 셔츠룩…침대서 나른+청순 분위기 [화보]',
