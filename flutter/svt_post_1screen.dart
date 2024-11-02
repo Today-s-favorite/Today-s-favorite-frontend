@@ -12,19 +12,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ChatScreen1(),
+      home: svtChatScreen1(),
     );
   }
 }
 
-class ChatScreen1 extends StatefulWidget {
-  const ChatScreen1({super.key});
+class svtChatScreen1 extends StatefulWidget {
+  const svtChatScreen1({super.key});
 
   @override
-  _ChatScreen1State createState() => _ChatScreen1State();
+  _svtChatScreen1State createState() => _svtChatScreen1State();
 }
 
-class _ChatScreen1State extends State<ChatScreen1> {
+class _svtChatScreen1State extends State<svtChatScreen1> {
   int naverLikeCount = 20;
   int youtubeLikeCount = 20;
 
@@ -35,7 +35,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFC7B1D9),
+        backgroundColor: const Color(0xFFF7D3D2),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -44,10 +44,11 @@ class _ChatScreen1State extends State<ChatScreen1> {
         ),
         toolbarHeight: 30,
       ),
-      backgroundColor: const Color(0xFFC7B1D9),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: SingleChildScrollView(
+      backgroundColor: const Color(0xFFF7D3D2),
+      body: SingleChildScrollView(
+        // 스크롤 가능하도록 추가
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -56,7 +57,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFEAEAEA),
+                  color: const Color(0xFFFDF2F1), // 배경색 변경
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
@@ -188,6 +189,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
         const SizedBox(width: 8),
         Expanded(
           child: Card(
+            color: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -203,7 +205,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black87,
+                          color: Colors.black,
                         ),
                       ),
                     ],
@@ -218,8 +220,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                     },
                     child: Text(
                       content,
-                      style:
-                          const TextStyle(fontSize: 14, color: Colors.black54),
+                      style: const TextStyle(fontSize: 14, color: Colors.black),
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -265,6 +266,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
         const SizedBox(width: 8),
         Expanded(
           child: Card(
+            color: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -296,9 +298,9 @@ class _ChatScreen1State extends State<ChatScreen1> {
                           Text(
                             platform,
                             style: const TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black87,
+                              color: Colors.black,
                             ),
                           ),
                         ],
@@ -306,8 +308,8 @@ class _ChatScreen1State extends State<ChatScreen1> {
                       const SizedBox(height: 8),
                       Text(
                         videoTitle,
-                        style: const TextStyle(
-                            fontSize: 14, color: Colors.black54),
+                        style:
+                            const TextStyle(fontSize: 14, color: Colors.black),
                       ),
                       const SizedBox(height: 8),
                       Row(
