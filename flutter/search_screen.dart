@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'svt_main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +57,17 @@ class _SearchScreenState extends State<SearchScreen> {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              // 검색 기능 구현
+              // '세븐틴'이라고 입력했을 때만 메인 페이지로 이동
+              if (searchQuery == '세븐틴') {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyHomePage()),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('검색어를 확인해주세요.')),
+                );
+              }
             },
           ),
         ],
