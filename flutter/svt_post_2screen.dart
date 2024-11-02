@@ -25,7 +25,17 @@ class svtChatScreen2 extends StatefulWidget {
 }
 
 class _svtChatScreen2State extends State<svtChatScreen2> {
-  int youtubeLikeCount = 20;
+  int likeCount1 = 80;
+  int likeCount2 = 93;
+  int likeCount3 = 253;
+  int likeCount4 = 80;
+  int likeCount5 = 102;
+  int likeCount6 = 153;
+  int likeCount7 = 123;
+  int likeCount8 = 95;
+  int likeCount9 = 139;
+  int likeCount10 = 127;
+  int likeCount11 = 98;
 
   @override
   Widget build(BuildContext context) {
@@ -75,10 +85,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '\'LOVE, MONEY, FAME (feat. DJ Khaled)\' Photo Sketch\n\n▶️https://weverse.io/seventeen/media/4-183671670\n\n#SEVENTEEN #세븐틴\n#SPILL_THE_FEELS\n#LOVE_MONEY_FAME',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount1,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount1++;
                   });
                 },
               ),
@@ -89,10 +99,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[NEWS] Tomorrow on @GMA, catch SEVENTEEN performing the English version of “LOVE, MONEY, FAME (feat. DJ Khaled)" LIVE from Times Square! Don\'t miss it!\n\n#SEVENTEEN #세븐틴\n#SPILL_THE_FEELS\n#LOVE_MONEY_FAME\n#GMA #GoodMorningAmerica',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount2,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount2++;
                   });
                 },
               ),
@@ -103,10 +113,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[GOING SEVENTEEN 2020] EP.44 TTT #1 (Hyperrealism Ver.) 10 Million Views🍻\n▶️ http://youtu.be/OjbjlNbQqLc\n\n#SEVENTEEN #세븐틴\n#GOING_SVT\n#GOSE_TTT_10MViews\n#고잉세븐틴_티티티_천만뷰',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount3,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount3++;
                   });
                 },
               ),
@@ -117,10 +127,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[17\'S] #뮤직뱅크 1위까지 해냈다! 세븐틴🏆🏆\n\n#Rockwithyou 활동 무대는\n캐럿들 응원으로 더 에너지 넘친다🔥 \n\n#세븐틴_뮤직뱅크_1위_축하해👏\n#Rockwithyou2ndWin',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount4,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount4++;
                   });
                 },
               ),
@@ -131,10 +141,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[SEVENTEEN\'s SNAPSHOOT] EP.10 연습실 노래방 (Practice Studio Karaoke)\n\n▶ https://youtu.be/v5PrAprWRac\n\n#세븐틴 #SEVENTEEN\n#SVT_SNAPSHOOT',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount5,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount5++;
                   });
                 },
               ),
@@ -145,24 +155,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     'SEVENTEEN (세븐틴) \'Rock with you\' Official MV (Choreography Version)\n\n▶ https://youtu.be/EhrFmgeqo6k\n\n#세븐틴 #SEVENTEEN\n#Attacca\n#Rockwithyou\n#SVT_Rockwithyou',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount6,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              buildChatBubbleWithImage(
-                logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/21.10.29(4) X.png',
-                platform: 'Twitter',
-                videoTitle:
-                    '[VIDEO] #뮤직뱅크\n\nRock with you - 세븐틴 (SEVENTEEN)\n▶ https://tv.naver.com/v/23242943\n\n#세븐틴 #SEVENTEEN\n#Attacca\n#Rockwithyou\n#SVT_Rockwithyou',
-                likeCount: youtubeLikeCount,
-                onLikePressed: () {
-                  setState(() {
-                    youtubeLikeCount++;
+                    likeCount6++;
                   });
                 },
               ),
@@ -173,10 +169,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[17\'S] 👤세븐틴이가 #엠카운트다운 에서 1위 트로피를 가져왔단다. 캐럿들이 준게 분명하다👤\n\n모두 응원해 준 캐럿들 덕분이에요! 정말 감사합니다💖💙 캐럿들이 있어 오늘도 반짝반짝 빛나는 세봉이들✨\n\n#세븐틴_엠카운트다운_1위_축하해🎉\n#HOME_RUN2ndWin🏆',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount7,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount7++;
                   });
                 },
               ),
@@ -187,10 +183,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[GOING MOMENT] 번지 점프?! 그까짓 것 세븐틴은 하,하면 해...! (덜덜)\n\n▶ https://youtu.be/MBNK0u3sCaI\n\n#세븐틴 #SEVENTEEN\n#GOING_SVT',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount8,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount8++;
                   });
                 },
               ),
@@ -201,10 +197,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[VIDEO] #엠카운트다운\n\n\'1위\' ♨짜릿하게 터진 ‘세븐틴’의 ‘HOME;RUN’ 무대▶️ https://tv.naver.com/v/16459428\n\n#SEVENTEEN #세븐틴\n#Semicolon #세미콜론\n#HOME_RUN',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount9,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount9++;
                   });
                 },
               ),
@@ -214,10 +210,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 thumbnailPath: 'assets/img/20.10.29(4) X.png',
                 platform: 'Twitter',
                 videoTitle: '[17\'S 쿱스] 너무 영광스러운 자리였습니다',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount10,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likeCount10++;
                   });
                 },
               ),
@@ -228,38 +224,10 @@ class _svtChatScreen2State extends State<svtChatScreen2> {
                 platform: 'Twitter',
                 videoTitle:
                     '[VIDEO] #뮤직뱅크\n\n[K-Choreo] 세븐틴 직캠 독 Fear (SEVENTEEN Choreography) l @ MusicBank 191004\n▶ https://tv.naver.com/v/10631249\n\n[K-Choreo] 세븐틴 직캠 스냅슛 Snapshoot (SEVENTEEN Choreography) l @ MusicBank 191004\n▶ https://tv.naver.com/v/10631096\n\n#세븐틴 #SEVENTEEN',
-                likeCount: youtubeLikeCount,
+                likeCount: likeCount11,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              buildChatBubbleWithImage(
-                logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/17.10.29 X.png',
-                platform: 'Twitter',
-                videoTitle:
-                    'SEVENTEEN 2ND ALBUM \'TEEN, AGE\' ALBUM PACKAGE PREVIEW\n#SEVENTEEN #세븐틴 #TEEN_AGE #20171106_6PM',
-                likeCount: youtubeLikeCount,
-                onLikePressed: () {
-                  setState(() {
-                    youtubeLikeCount++;
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              buildChatBubbleWithImage(
-                logoPath: 'assets/img/twitter.png',
-                thumbnailPath: 'assets/img/15.10.29 X.png',
-                platform: 'Twitter',
-                videoTitle:
-                    '[Doogi PD] 지인이 사진을 보내줬다. 쿱스가   생각나서 쿱스에게 보내주었다. 혼이 났다.\n#그래도_형인데 #솔직히_닮았지 #꽃미남',
-                likeCount: youtubeLikeCount,
-                onLikePressed: () {
-                  setState(() {
-                    youtubeLikeCount++;
+                    likeCount11++;
                   });
                 },
               ),
