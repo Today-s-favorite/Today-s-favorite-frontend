@@ -12,29 +12,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ChatScreen1(),
+      home: svtChatScreen2(),
     );
   }
 }
 
-class ChatScreen1 extends StatefulWidget {
-  const ChatScreen1({super.key});
+class svtChatScreen2 extends StatefulWidget {
+  const svtChatScreen2({super.key});
 
   @override
-  _ChatScreen1State createState() => _ChatScreen1State();
+  _svtChatScreen2State createState() => _svtChatScreen2State();
 }
 
-class _ChatScreen1State extends State<ChatScreen1> {
+class _svtChatScreen2State extends State<svtChatScreen2> {
   int youtubeLikeCount = 20;
 
   @override
   Widget build(BuildContext context) {
-    String currentDate =
-        DateFormat('yyyy년 M월 d일').format(DateTime(2024, 10, 29));
+    String currentDate = DateFormat('yyNN년 M월 d일').format(DateTime(20, 10, 29));
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFC7B1D9),
+        backgroundColor: const Color(0xFFA6B7D8),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -43,7 +42,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
         ),
         toolbarHeight: 30,
       ),
-      backgroundColor: const Color(0xFFC7B1D9),
+      backgroundColor: const Color(0xFFA6B7D8),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
@@ -52,10 +51,12 @@ class _ChatScreen1State extends State<ChatScreen1> {
             children: [
               const SizedBox(height: 30),
               Container(
+                constraints: const BoxConstraints(maxWidth: 150),
+                alignment: Alignment.center,
                 padding:
                     const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFEAEAEA),
+                  color: const Color(0xFFE4E9F3),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
@@ -281,13 +282,14 @@ class _ChatScreen1State extends State<ChatScreen1> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CircleAvatar(
-          backgroundColor: Colors.white,
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           radius: 16,
           child: Image.asset(logoPath, width: 24, height: 24),
         ),
         const SizedBox(width: 8),
         Expanded(
           child: Card(
+            color: Colors.white, // 카드 배경색을 흰색으로 설정
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -321,7 +323,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black87,
+                              color: Colors.black,
                             ),
                           ),
                         ],
@@ -329,8 +331,8 @@ class _ChatScreen1State extends State<ChatScreen1> {
                       const SizedBox(height: 8),
                       Text(
                         videoTitle,
-                        style: const TextStyle(
-                            fontSize: 14, color: Colors.black54),
+                        style:
+                            const TextStyle(fontSize: 14, color: Colors.black),
                       ),
                       const SizedBox(height: 8),
                       Row(
