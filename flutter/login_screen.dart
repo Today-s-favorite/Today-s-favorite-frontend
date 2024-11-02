@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'signup_screen.dart'; // 회원가입 화면 import
+import 'main_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -52,17 +53,20 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              // 로그인 처리
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MyHomePage()),
+                              );
                             },
                             child: const Text('로그인'),
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              // 회원가입 화면으로 이동
-                              Navigator.of(context).push(
+                              Navigator.push(
+                                context,
                                 MaterialPageRoute(
-                                  builder: (context) => const SignUpScreen(),
-                                ),
+                                    builder: (context) => const SignUpScreen()),
                               );
                             },
                             child: const Text('회원가입'),
@@ -82,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                             child: Container(
                               width: 55, // 너비 설정 (크기 증가)
                               height: 55, // 높이 설정 (크기 증가)
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.transparent, // 원의 배경을 투명하게 설정
                               ),
@@ -97,7 +101,7 @@ class LoginScreen extends StatelessWidget {
                             onTap: () {
                               // 구글 로그인 처리
                             },
-                            child: Container(
+                            child: SizedBox(
                               width: 40, // 너비 설정
                               height: 40, // 높이 설정
                               child: Image.asset(
@@ -111,7 +115,7 @@ class LoginScreen extends StatelessWidget {
                             onTap: () {
                               // 카카오 로그인 처리
                             },
-                            child: Container(
+                            child: SizedBox(
                               width: 40, // 너비 설정
                               height: 40, // 높이 설정
                               child: Image.asset(
