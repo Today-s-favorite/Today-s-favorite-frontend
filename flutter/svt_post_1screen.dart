@@ -25,8 +25,13 @@ class svtChatScreen1 extends StatefulWidget {
 }
 
 class _svtChatScreen1State extends State<svtChatScreen1> {
-  int naverLikeCount = 20;
-  int youtubeLikeCount = 20;
+  int likecount1 = 105;
+  int likecount2 = 93;
+  int likecount3 = 75;
+  int likecount4 = 57;
+  int likecount5 = 293;
+  int likecount6 = 110;
+  int likecount7 = 397;
 
   @override
   Widget build(BuildContext context) {
@@ -75,10 +80,10 @@ class _svtChatScreen1State extends State<svtChatScreen1> {
                 platform: 'Naver',
                 content:
                     "플레디스엔터테인먼트는 10월 29일 세븐틴 '엠카운트다운' 사전 녹화에서 발생한 방청객 밀집 상황에 대해 휴식 공간 제공 등 현장 조치를 했다고 밝혔다. \n일부 팬이 과밀로 인해 어지러움을 호소하며 이송되는 일이 발생했다. \n세븐틴은 현재 월드투어 중이며, 미국 텍사스와 오클랜드, 로스앤젤레스 공연을 앞두고 있다.",
-                likeCount: naverLikeCount,
+                likeCount: likecount1,
                 onLikePressed: () {
                   setState(() {
-                    naverLikeCount++;
+                    likecount1++;
                   });
                 },
               ),
@@ -88,10 +93,10 @@ class _svtChatScreen1State extends State<svtChatScreen1> {
                 platform: 'Naver',
                 content:
                     "그룹 세븐틴의 새 앨범 ‘SPILL THE FEELS’는 초동 판매량 316만 장으로 올해 K-팝 앨범 중 최고 기록을 세웠습니다.\n소속사에 따르면 이는 올해 발매된 K-팝 앨범 중 가장 높은 판매량입니다.\n오늘 수록곡 ‘Eyes on You’ 뮤직비디오도 공개됐습니다.",
-                likeCount: naverLikeCount,
+                likeCount: likecount2,
                 onLikePressed: () {
                   setState(() {
-                    naverLikeCount++;
+                    likecount2++;
                   });
                 },
               ),
@@ -101,10 +106,10 @@ class _svtChatScreen1State extends State<svtChatScreen1> {
                 thumbnailPath: 'assets/img/youtube(1).png',
                 platform: 'Youtube',
                 videoTitle: 'Wow🫢',
-                likeCount: youtubeLikeCount,
+                likeCount: likecount3,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likecount3++;
                   });
                 },
               ),
@@ -115,10 +120,10 @@ class _svtChatScreen1State extends State<svtChatScreen1> {
                 platform: 'Youtube',
                 videoTitle:
                     '#LOVE_MONEY_FAME 🌹 with #문상민 #MoonSangMin #승관 #SEUNGKWAN #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
-                likeCount: youtubeLikeCount,
+                likeCount: likecount4,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likecount4++;
                   });
                 },
               ),
@@ -129,10 +134,10 @@ class _svtChatScreen1State extends State<svtChatScreen1> {
                 platform: 'Youtube',
                 videoTitle:
                     '#LOVE_MONEY_FAME at 1,000ft up Empire State Building #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
-                likeCount: youtubeLikeCount,
+                likeCount: likecount5,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likecount5++;
                   });
                 },
               ),
@@ -143,10 +148,10 @@ class _svtChatScreen1State extends State<svtChatScreen1> {
                 platform: 'Youtube',
                 videoTitle:
                     '#LOVE_MONEY_FAME 🌹 with #버논 #VERNON #디노 #DINO #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
-                likeCount: youtubeLikeCount,
+                likeCount: likecount6,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likecount6++;
                   });
                 },
               ),
@@ -157,10 +162,10 @@ class _svtChatScreen1State extends State<svtChatScreen1> {
                 platform: 'Youtube',
                 videoTitle:
                     '#LOVE_MONEY_FAME 🌹 with #정한 #JEONGHAN #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
-                likeCount: youtubeLikeCount,
+                likeCount: likecount7,
                 onLikePressed: () {
                   setState(() {
-                    youtubeLikeCount++;
+                    likecount7++;
                   });
                 },
               ),
