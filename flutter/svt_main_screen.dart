@@ -31,21 +31,21 @@ class MyHomePage extends StatelessWidget {
         imageHeight: 100,
         text:
             '#LOVE_MONEY_FAME 🌹 with #정한 #JEONGHAN #SEVENTEEN #세븐틴 #SPILL_THE_FEELS',
-        likeCount: 20,
+        likeCount: 397,
       ),
       Post(
         imageUrl: 'assets/img/youtube(2).png',
         imageHeight: 100,
         text:
             "#LOVE_MONEY_FAME at 1,000ft up Empire State Building #SEVENTEEN #세븐틴 #SPILL_THE_FEELS",
-        likeCount: 15,
+        likeCount: 293,
       ),
       Post(
         imageUrl: 'assets/img/22.10.29 X.png',
         imageHeight: 140,
         text:
             '[GOING SEVENTEEN 2020] EP.44 TTT #1 (Hyperrealism Ver.) 10 Million Views🍻\n▶️ http://youtu.be/OjbjlNbQqLc\n\n#SEVENTEEN #세븐틴\n#GOING_SVT\n#GOSE_TTT_10MViews\n#고잉세븐틴_티티티_천만뷰',
-        likeCount: 15,
+        likeCount: 253,
       ),
     ];
 
@@ -296,7 +296,7 @@ class _PostCardState extends State<PostCard> {
                 const Icon(
                   Icons.favorite,
                   color: Colors.red,
-                  size: 16,
+                  size: 14,
                 ),
                 const SizedBox(width: 5),
                 Text(
