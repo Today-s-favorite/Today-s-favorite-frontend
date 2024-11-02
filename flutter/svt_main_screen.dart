@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'post_1screen.dart';
-import 'post_2screen.dart';
-import 'profile_screen.dart';
+import 'svt_post_1screen.dart';
+import 'svt_post_2screen.dart';
+import 'profile_screen.dart'; // 사용X 기능
+import 'search_screen.dart'; // 사용X 기능
 
 void main() {
   runApp(const MyApp());
@@ -60,7 +61,6 @@ class MyHomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE4E724),
         title: RichText(
           text: const TextSpan(
             children: [
@@ -74,7 +74,7 @@ class MyHomePage extends StatelessWidget {
               TextSpan(
                 text: "SVT",
                 style: TextStyle(
-                  color: Color(0xFFC7B1D9),
+                  color: Color(0xFF92A8D1),
                   fontSize: 28,
                   fontWeight: FontWeight.w900,
                 ),
@@ -88,17 +88,21 @@ class MyHomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  '마이페이지',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                IconButton(
+                  icon: const Icon(Icons.search_outlined),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SearchScreen(),
+                      ),
+                    );
+                  },
                 ),
                 IconButton(
-                  icon: const Icon(Icons.arrow_forward),
+                  icon: const Icon(Icons.home_outlined), // 집 모양 아이콘
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -118,93 +122,60 @@ class MyHomePage extends StatelessWidget {
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
-            // Search Bar
-            SizedBox(
-              width: 800,
-              height: 45,
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: '차애 소식 보러가기',
-                  hintStyle: const TextStyle(fontSize: 13),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
-                    borderSide: const BorderSide(
-                      color: Color(0xFFC7B1D9),
-                      width: 2,
+            const SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFF7CAC9),
+                      fixedSize: const Size(175, 30),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const svtChatScreen1()),
+                      );
+                    },
+                    child: const Text("오늘의 IU",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        )),
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
-                    borderSide: const BorderSide(
-                      color: Color(0xFFC7B1D9),
-                      width: 2,
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF92A8D1),
+                      fixedSize: const Size(175, 30),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7),
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const svtChatScreen2()),
+                      );
+                    },
+                    child: const Text("N년전 오늘",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        )),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
-                    borderSide: const BorderSide(
-                      color: Color(0xFFC7B1D9),
-                      width: 2,
-                    ),
-                  ),
-                ),
+                ],
               ),
             ),
             const SizedBox(height: 10),
-
-            // Button Row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFE4E724),
-                    fixedSize: const Size(175, 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ChatScreen1()),
-                    );
-                  },
-                  child: const Text("오늘의 SVT",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      )),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFE4E724),
-                    fixedSize: const Size(175, 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ChatScreen2()),
-                    );
-                  },
-                  child: const Text("N년전 오늘",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      )),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-
-            // "Today Hot" section
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -216,18 +187,9 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 5),
-
-            // Cards for content with border
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(7.0),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: const Color(0xFFC7B1D9),
-                    width: 1,
-                  ),
-                  borderRadius: BorderRadius.circular(5),
-                ),
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: crossAxisCount,
@@ -263,73 +225,88 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromRGBO(236, 238, 104, 1),
-      child: Column(
-        children: [
-          // Row for the logo and SNS name
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Row(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12), // 카드 모서리 둥글게
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [
+              Color(0xFFF7CAC9), // 첫 번째 색상
+              Color(0xFF92A8D1), // 두 번째 색상
+            ],
+            begin: Alignment.centerLeft, // 그라데이션 시작 위치
+            end: Alignment.centerRight, // 그라데이션 끝 위치
+          ),
+          borderRadius: BorderRadius.circular(12), // 카드와 같은 모서리 둥글게
+        ),
+        child: Column(
+          children: [
+            // Row for the logo and SNS name
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Row(
+                children: [
+                  // Logo (replace with actual path to the local image in the assets folder)
+                  Image.asset(
+                    'assets/img/twitter.png',
+                    height: 10, // Adjust height as needed
+                  ),
+                  const SizedBox(width: 5),
+                  const Expanded(
+                    // Expanded 사용
+                    child: Text(
+                      "Twitter", // Replace with dynamic platform name if necessary
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      overflow: TextOverflow.ellipsis, // 텍스트가 넘치면 "..." 처리
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (widget.post.imageUrl.isNotEmpty) ...[
+              Container(
+                padding: const EdgeInsets.all(7.0),
+                child: SizedBox(
+                  height: widget.post.imageHeight,
+                  child: Center(
+                    child: Image.asset(
+                      widget.post.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                widget.post.text,
+                style: const TextStyle(fontSize: 12),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                // Logo (replace with actual path to the local image in the assets folder)
-                Image.asset(
-                  'assets/img/twitter.png',
-                  height: 10, // Adjust height as needed
+                const Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 16,
                 ),
                 const SizedBox(width: 5),
-                const Expanded(
-                  // Expanded 사용
-                  child: Text(
-                    "Twitter", // Replace with dynamic platform name if necessary
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    overflow: TextOverflow.ellipsis, // 텍스트가 넘치면 "..." 처리
-                  ),
+                Text(
+                  widget.post.likeCount.toString(),
+                  style: const TextStyle(fontSize: 14),
                 ),
               ],
             ),
-          ),
-          if (widget.post.imageUrl.isNotEmpty) ...[
-            Container(
-              padding: const EdgeInsets.all(7.0),
-              child: SizedBox(
-                height: widget.post.imageHeight,
-                child: Center(
-                  child: Image.asset(
-                    widget.post.imageUrl,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
           ],
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Text(
-              widget.post.text,
-              style: const TextStyle(fontSize: 12),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const Icon(
-                Icons.favorite,
-                color: Colors.red,
-                size: 16,
-              ),
-              const SizedBox(width: 5),
-              Text(
-                widget.post.likeCount.toString(),
-                style: const TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-        ],
+        ),
       ),
     );
   }
