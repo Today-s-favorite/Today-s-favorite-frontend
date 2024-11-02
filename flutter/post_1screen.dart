@@ -25,8 +25,8 @@ class ChatScreen1 extends StatefulWidget {
 }
 
 class _ChatScreen1State extends State<ChatScreen1> {
-  int naverLikeCount = 20;
-  int youtubeLikeCount = 20;
+  int naverLikeCount = 90;
+  int youtubeLikeCount = 87;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFC7B1D9),
+        backgroundColor: const Color(0xFFE9EC5F),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -44,7 +44,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
         ),
         toolbarHeight: 30,
       ),
-      backgroundColor: const Color(0xFFC7B1D9),
+      backgroundColor: const Color(0xFFE9EC5F),
       body: SingleChildScrollView(
         // 스크롤 가능하도록 추가
         child: Padding(
@@ -57,7 +57,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFEAEAEA),
+                  color: const Color(0xFFFBFBDF), // 배경색 변경
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
@@ -74,7 +74,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                 imagePath: 'assets/img/naver_logo.png',
                 platform: 'Naver',
                 content:
-                    "\“1위 아이유·2위 이승기·3위 김민석\”\n\n랭키파이가 10월 4주차 발라드 가수 트렌드지수를 발표하며, 아이유가 1위, 이승기가 2위, 김민석이 3위에 올랐다.\n트렌드지수는 구글 검색량과 네이버 검색 데이터를 종합하여 산출되며, 성별 선호도에서 아이유는 여성(62%)에게 더 많은 인기를 끌었다.\n연령대별 선호도에서는 20대가 아이유를 가장 많이 선호(30%)하며, 각 가수의 인기 경향이 연령대별로 뚜렷하게 구분되었다.",
+                    "“1위 아이유·2위 이승기·3위 김민석”\n\n랭키파이가 10월 4주차 발라드 가수 트렌드지수를 발표하며, 아이유가 1위, 이승기가 2위, 김민석이 3위에 올랐다.\n트렌드지수는 구글 검색량과 네이버 검색 데이터를 종합하여 산출되며, 성별 선호도에서 아이유는 여성(62%)에게 더 많은 인기를 끌었다.\n연령대별 선호도에서는 20대가 아이유를 가장 많이 선호(30%)하며, 각 가수의 인기 경향이 연령대별로 뚜렷하게 구분되었다.",
                 likeCount: naverLikeCount,
                 onLikePressed: () {
                   setState(() {
@@ -120,6 +120,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
         const SizedBox(width: 8),
         Expanded(
           child: Card(
+            color: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -134,8 +135,8 @@ class _ChatScreen1State extends State<ChatScreen1> {
                         platform,
                         style: const TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
                         ),
                       ),
                     ],
@@ -143,15 +144,16 @@ class _ChatScreen1State extends State<ChatScreen1> {
                   const SizedBox(height: 8),
                   GestureDetector(
                     onTap: () async {
-                      const url = 'https://www.osen.co.kr/article/G1112375904';
+                      const url =
+                          'https://www.koreastocknews.com/news/articleView.html?idxno=104954';
                       if (await canLaunch(url)) {
                         await launch(url);
                       }
                     },
                     child: Text(
                       content,
-                      style:
-                          const TextStyle(fontSize: 14, color: Colors.black54),
+                      style: const TextStyle(
+                          fontSize: 14, color: Colors.black), // 텍스트 색상 변경
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -197,6 +199,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
         const SizedBox(width: 8),
         Expanded(
           child: Card(
+            color: Colors.white, // 카드 배경색을 흰색으로 변경
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -206,7 +209,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
                 GestureDetector(
                   onTap: () async {
                     const url =
-                        'https://youtu.be/fsigYmDuB9Y?si=OsHuiE4sJxJmqTCJ'; // 변경된 유튜브 URL
+                        'https://www.youtube.com/watch?v=X2lQst4hlJI&t=109s'; // 변경된 유튜브 URL
                     if (await canLaunch(url)) {
                       await launch(url);
                     }
@@ -239,7 +242,8 @@ class _ChatScreen1State extends State<ChatScreen1> {
                       Text(
                         videoTitle,
                         style: const TextStyle(
-                            fontSize: 14, color: Colors.black54),
+                            fontSize: 14,
+                            color: Color(0xFF000000)), // 텍스트 색상 변경
                       ),
                       const SizedBox(height: 8),
                       Row(
